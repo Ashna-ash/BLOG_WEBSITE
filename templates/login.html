@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Login Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> <!-- Add Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Add Font Awesome -->
+    <style>
+        /* Custom styles */
+        body {
+            background-image: url('https://th.bing.com/th/id/OIP.9zMkYjxQymCwSTYWRxV7zQHaE7?w=261&h=180&c=7&r=0&o=5&pid=1.7');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Roboto', sans-serif; /* Use Google Font */
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+        }
+        .form-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-control {
+            border-radius: 25px; /* Round the input corners */
+            padding-left: 40px; /* Add space for the icon */
+        }
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #999; /* Set icon color */
+        }
+        .btn-primary {
+            border-radius: 25px; /* Round the button corners */
+            width: 100%; /* Make the button full width */
+            margin-top: 20px; /* Add some space between button and inputs */
+        }
+        .btn-primary:hover {
+            background-color: #007bff; /* Change button color on hover */
+        }
+        .additional-links {
+            margin-top: 20px; /* Add space between links and button */
+            text-align: center; /* Center align the links */
+        }
+        .additional-links a {
+            color: #007bff; /* Set link color */
+            margin-right: 10px; /* Add space between links */
+        }
+        .additional-links a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-heading">
+        <h2>Login</h2>
+    </div>
+
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+        <div class="mb-3 position-relative">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3 position-relative">
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button><br><br>
+
+        <div class="additional-links">
+            <a href="{% url 'register'  %}">Forgot Password?</a><br><br>
+            <p>Not a Member?<a href="{% url 'register'  %}">Sign Up</a></p>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

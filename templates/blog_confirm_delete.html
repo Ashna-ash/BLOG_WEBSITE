@@ -1,0 +1,7 @@
+
+<!-- blog_confirm_delete.html -->
+<h2>Are you sure you want to delete "{{ object.title }}"?</h2>
+<form method="post" action="{% url 'blog_delete' pk=object.pk %}">
+  {% csrf_token %}
+  <button type="submit">Confirm</button>
+</form>

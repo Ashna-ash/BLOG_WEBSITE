@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> <!-- Add Google Font -->
+    <style>
+        /* Custom styles */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp8814027.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Roboto', sans-serif; /* Use Google Font */
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+        }
+        .form-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-control {
+            border-radius: 25px; /* Round the input corners */
+            padding-left: 20px; /* Add space for the icon */
+        }
+        .btn-primary {
+            border-radius: 25px; /* Round the button corners */
+            width: 100%; /* Make the button full width */
+            margin-top: 20px; /* Add some space between button and inputs */
+        }
+        .btn-primary:hover {
+            background-color: #007bff; /* Change button color on hover */
+        }
+    </style>
+</head>
+<body>
+
+<form action="/add_blogs/" enctype="multipart/form-data" method="POST"> {% csrf_token %}
+<div class="container mt-4">
+{{ form.as_p }}
+<button class="btn btn-primary">Add Blog</button>
+</div>
+</form>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

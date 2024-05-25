@@ -1,0 +1,11 @@
+
+{% for comment in comments %}
+
+    {{ comment.content }}
+{% endfor %}
+
+<form action="{% url 'blog_comments' desc=post.desc %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary mt-2">Comment</button>
+</form>

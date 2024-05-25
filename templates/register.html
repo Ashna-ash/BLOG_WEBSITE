@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Register</title>
+    <style>
+        /* Add custom styles here if needed */
+        body {
+            background-color: #f8f9fa;
+            background-image: url('https://th.bing.com/th/id/OIP.PgC8yuokbuJqJ4Fzt-HuEAHaEo?w=291&h=180&c=7&r=0&o=5&pid=1.7');
+        }
+        .container {
+          max-width: 500px;
+          margin: auto;
+          margin-top: 50px;
+          padding-bottom: 25px;
+          background-color: rgba(255, 255, 255, 0.1); /* Change the alpha value (0.1) to adjust transparency */
+          border: 2px solid silver;
+          background-color: rgba(255, 255, 255, 0.1); /* Change the alpha value (0.7) to adjust transparency */
+        }
+        h2{
+        color:white;
+        padding-top:40px;
+        text-align: center;
+        margin-bottom: 20px;
+         font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <div class="container mt-5">
+        <h2>REGISTRATION FORM</h2>
+        <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input type="text" class="form-control form-control-lg" id="first_name" name="first_name" placeholder="First Name">
+        </div>
+        <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input type="text" class="form-control form-control-lg" id="last_name" name="last_name" placeholder="Last Name">
+        </div>
+        <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Email address">
+        </div>
+        <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input type="password" class="form-control form-control-lg" id="password1" name="password1" placeholder="Password">
+        </div>
+        <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input type="password" class="form-control form-control-lg" id="password2" name="password2" placeholder="Confirm Password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
